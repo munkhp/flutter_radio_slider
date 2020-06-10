@@ -10,13 +10,8 @@ class RadioSliderThumbShape extends SliderComponentShape {
   Size getPreferredSize(bool isEnabled, bool isDiscrete) {
     return Size.fromRadius(10);
   }
-
-  @override
-  void paint(PaintingContext context, Offset center,
-      {Animation<double> activationAnimation, Animation<double> enableAnimation,
-        bool isDiscrete, TextPainter labelPainter, RenderBox parentBox,
-        SliderThemeData sliderTheme, TextDirection textDirection,
-        double value}) {
+@override void paint(PaintingContext context, Offset center, {Animation<double> activationAnimation, Animation<double> enableAnimation, bool isDiscrete, TextPainter labelPainter, RenderBox parentBox, SliderThemeData sliderTheme, TextDirection textDirection, double value, double textScaleFactor, Size sizeWithOverflow}) {
+  {
     var outerValueStyle = Paint()
       ..color = this.activeColor ?? sliderTheme.activeTickMarkColor
       ..strokeWidth = 4.0
@@ -32,6 +27,7 @@ class RadioSliderThumbShape extends SliderComponentShape {
 
     // paint the inner circle
     context.canvas.drawCircle(center, 10, innerValueStyle);
+  }
   }
 }
 
